@@ -1,4 +1,4 @@
-'use client' // Required for interactivity
+'use client';
 
 import { useState } from 'react'
 import Head from 'next/head'
@@ -19,52 +19,6 @@ export default function Home() {
       <Head>
         <title>My Personal Website</title>
       </Head>
-
-      {/* Navigation */}
-      <nav className="bg-white sticky top-0 z-10 shadow-lg">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-3">
-            <button 
-              onClick={() => scrollToSection('home')}
-              className="text-2xl font-bold text-blue-600"
-            >
-              Personal Website
-            </button>
-            
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
-              <button onClick={() => scrollToSection('home')} className="hover:text-blue-400">Home</button>
-              <button onClick={() => scrollToSection('about')} className="hover:text-blue-400">About</button>
-              <button onClick={() => scrollToSection('projects')} className="hover:text-blue-400">Projects</button>
-              <button onClick={() => scrollToSection('contact')} className="hover:text-blue-400">Contact</button>
-            </div>
-            
-            {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden focus:outline-none"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
-          
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden pb-4 space-y-3">
-              <button onClick={() => scrollToSection('home')} className="block py-2 hover:text-blue-400">Home</button>
-              <button onClick={() => scrollToSection('about')} className="block py-2 hover:text-blue-400">About</button>
-              <button onClick={() => scrollToSection('projects')} className="block py-2 hover:text-blue-400">Projects</button>
-              <button onClick={() => scrollToSection('contact')} className="block py-2 hover:text-blue-400">Contact</button>
-            </div>
-          )}
-        </div>
-      </nav>
 
       {/* All Sections */}
       <main>
@@ -199,18 +153,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p>© {new Date().getFullYear()} My Personal Website</p>
-          <div className="flex justify-center space-x-4 mt-4">
-            <a href="#" className="hover:text-blue-400">Twitter</a>
-            <a href="#" className="hover:text-blue-400">GitHub</a>
-            <a href="#" className="hover:text-blue-400">LinkedIn</a>
-          </div>
-        </div>
-      </footer>
     </>
   )
 }
